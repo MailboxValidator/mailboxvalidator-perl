@@ -138,6 +138,8 @@ Constructs a new MailboxValidator::SingleValidation object with the specified AP
 
 Returns the MailboxValidator API validation results. See API documentation for more details: http://www.mailboxvalidator.com/api-single-validation
 
+=back
+
 =head1 SEE ALSO
 
 http://www.mailboxvalidator.com
