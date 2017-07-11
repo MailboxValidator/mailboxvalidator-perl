@@ -22,7 +22,7 @@ use LWP::Simple;
 use URI::Escape;
 use JSON::Parse 'parse_json';
 
-$VERSION = '1.00';
+$VERSION = '1.01';
 
 require Exporter;
 @ISA = qw(Exporter);
@@ -146,7 +146,7 @@ http://www.mailboxvalidator.com
 
 =head1 VERSION
 
-1.00
+1.01
 
 =head1 AUTHOR
 
