@@ -124,7 +124,7 @@ Go to http://www.mailboxvalidator.com/plans#api to sign up for FREE API plan and
 
 =over 4
 
-=item $mbv = MailboxValidator::SingleValidation->Init("PASTE_YOUR_API_KEY_HERE");
+=item $mbv = MailboxValidator::SingleValidation->Init('PASTE_YOUR_API_KEY_HERE');
 
 Constructs a new MailboxValidator::SingleValidation object with the specified API key.
 
@@ -134,7 +134,7 @@ Constructs a new MailboxValidator::SingleValidation object with the specified AP
 
 =over 4
 
-=item $results = $mbv->ValidateEmail("example@example.com");
+=item $results = $mbv->ValidateEmail('example@example.com');
 
 Returns the MailboxValidator API validation results. See API documentation for more details: http://www.mailboxvalidator.com/api-single-validation
 
