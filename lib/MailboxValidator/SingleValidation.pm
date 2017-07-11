@@ -22,7 +22,7 @@ use LWP::Simple;
 use URI::Escape;
 use JSON::Parse 'parse_json';
 
-$VERSION = '1.01';
+$VERSION = '1.02';
 
 require Exporter;
 @ISA = qw(Exporter);
@@ -111,13 +111,13 @@ This module can be used in many types of projects such as:
  - cleaning your mailing list prior to an email marketing campaign
  - a form of fraud check
 
-Go to http://www.mailboxvalidator.com/api-single-validation for the API documentation.
+Go to L<MailboxValidator API documentation page|http://www.mailboxvalidator.com/api-single-validation> for more info.
 
 =head1 DEPENDENCIES
 
 An API key is required for this module to function.
 
-Go to http://www.mailboxvalidator.com/plans#api to sign up for FREE API plan and you'll be given an API key.
+Go to L<MailboxValidator API plans page|http://www.mailboxvalidator.com/plans#api> to sign up for FREE API plan and you'll be given an API key.
 
 
 =head1 CLASS METHODS
@@ -136,17 +136,17 @@ Constructs a new MailboxValidator::SingleValidation object with the specified AP
 
 =item $results = $mbv->ValidateEmail('example@example.com');
 
-Returns the MailboxValidator API validation results. See API documentation for more details: http://www.mailboxvalidator.com/api-single-validation
+Returns the MailboxValidator API validation results. See L<MailboxValidator API documentation|http://www.mailboxvalidator.com/api-single-validation> for more details.
 
 =back
 
 =head1 SEE ALSO
 
-http://www.mailboxvalidator.com
+L<MailboxValidator Website|http://www.mailboxvalidator.com>
 
 =head1 VERSION
 
-1.01
+1.02
 
 =head1 AUTHOR
 

@@ -5,3 +5,6 @@ Revision history for Perl extension MailboxValidator::SingleValidation.
 
 1.01  11th July 2017
       Fixed pod error
+
+1.02  11th July 2017
+      Fixed pod formatting
