@@ -31,9 +31,13 @@
          }
       },
       "runtime" : {
-         "requires" : {}
+         "requires" : {
+            "JSON::Parse" : "0",
+            "LWP::Simple" : "0",
+            "URI::Escape" : "0"
+         }
       }
    },
    "release_status" : "stable",
-   "version" : "1.02"
+   "version" : "1.03"
 }

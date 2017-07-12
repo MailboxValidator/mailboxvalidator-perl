@@ -5,7 +5,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'MailboxValidator::SingleValidation',
     VERSION_FROM      => 'lib/MailboxValidator/SingleValidation.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => { 'LWP::Simple' => 0, 'URI::Escape' => 0, 'JSON::Parse' => 0 }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/MailboxValidator/SingleValidation.pm', # retrieve abstract from module
        AUTHOR         => 'MailboxValidator.com <support@mailboxvalidator.com>') : ()),

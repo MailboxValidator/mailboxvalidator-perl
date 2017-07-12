@@ -20,7 +20,7 @@
 #     LIBS => [q[]]
 #     LICENSE => q[lgpl_3_0]
 #     NAME => q[MailboxValidator::SingleValidation]
-#     PREREQ_PM => {  }
+#     PREREQ_PM => { URI::Escape=>q[0], JSON::Parse=>q[0], LWP::Simple=>q[0] }
 #     TEST_REQUIRES => {  }
 #     VERSION_FROM => q[lib/MailboxValidator/SingleValidation.pm]
 
@@ -65,11 +65,11 @@ DIRFILESEP = \\
 DFSEP = $(DIRFILESEP)
 NAME = MailboxValidator::SingleValidation
 NAME_SYM = MailboxValidator_SingleValidation
-VERSION = 1.02
+VERSION = 1.03
 VERSION_MACRO = VERSION
-VERSION_SYM = 1_02
+VERSION_SYM = 1_03
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 1.02
+XS_VERSION = 1.03
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib\arch
@@ -271,7 +271,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = MailboxValidator-SingleValidation
-DISTVNAME = MailboxValidator-SingleValidation-1.02
+DISTVNAME = MailboxValidator-SingleValidation-1.03
 
 
 # --- MakeMaker macro section:
@@ -525,8 +525,11 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) "  directory:" >> META_new.yml
 	$(NOECHO) $(ECHO) "    - t" >> META_new.yml
 	$(NOECHO) $(ECHO) "    - inc" >> META_new.yml
-	$(NOECHO) $(ECHO) "requires: {{}}" >> META_new.yml
-	$(NOECHO) $(ECHO) "version: 1.02" >> META_new.yml
+	$(NOECHO) $(ECHO) requires: >> META_new.yml
+	$(NOECHO) $(ECHO) "  JSON::Parse: 0" >> META_new.yml
+	$(NOECHO) $(ECHO) "  LWP::Simple: 0" >> META_new.yml
+	$(NOECHO) $(ECHO) "  URI::Escape: 0" >> META_new.yml
+	$(NOECHO) $(ECHO) "version: 1.03" >> META_new.yml
 	-$(NOECHO) $(MV) META_new.yml $(DISTVNAME)/META.yml
 	$(NOECHO) $(ECHO) Generating META.json
 	$(NOECHO) $(ECHO) {{ > META_new.json
@@ -562,11 +565,15 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) "         }}" >> META_new.json
 	$(NOECHO) $(ECHO) "      }}," >> META_new.json
 	$(NOECHO) $(ECHO) "      \"runtime\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "         \"requires\" : {{}}" >> META_new.json
+	$(NOECHO) $(ECHO) "         \"requires\" : {{" >> META_new.json
+	$(NOECHO) $(ECHO) "            \"JSON::Parse\" : \"0\"," >> META_new.json
+	$(NOECHO) $(ECHO) "            \"LWP::Simple\" : \"0\"," >> META_new.json
+	$(NOECHO) $(ECHO) "            \"URI::Escape\" : \"0\"" >> META_new.json
+	$(NOECHO) $(ECHO) "         }}" >> META_new.json
 	$(NOECHO) $(ECHO) "      }}" >> META_new.json
 	$(NOECHO) $(ECHO) "   }}," >> META_new.json
 	$(NOECHO) $(ECHO) "   \"release_status\" : \"stable\"," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"version\" : \"1.02\"" >> META_new.json
+	$(NOECHO) $(ECHO) "   \"version\" : \"1.03\"" >> META_new.json
 	$(NOECHO) $(ECHO) }} >> META_new.json
 	-$(NOECHO) $(MV) META_new.json $(DISTVNAME)/META.json
 
@@ -877,6 +884,9 @@ ppd :
 	$(NOECHO) $(ECHO) "    <ABSTRACT>Email verification module for Perl using MailboxValidator API. It validates if the email is valid, from a free provider, contains high-risk keywords, whether it's a catch-all address and so much more.</ABSTRACT>" >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) "    <AUTHOR>MailboxValidator.com &lt;support@mailboxvalidator.com&gt;</AUTHOR>" >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) "    <IMPLEMENTATION>" >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) "        <REQUIRE NAME=\"JSON::Parse\" />" >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) "        <REQUIRE NAME=\"LWP::Simple\" />" >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) "        <REQUIRE NAME=\"URI::Escape\" />" >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) "        <ARCHITECTURE NAME=\"MSWin32-x64-multi-thread-5.16\" />" >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) "        <CODEBASE HREF=\"\" />" >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) "    </IMPLEMENTATION>" >> $(DISTNAME).ppd

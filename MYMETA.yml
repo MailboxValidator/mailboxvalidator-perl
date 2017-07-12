@@ -17,5 +17,8 @@ no_index:
   directory:
     - t
     - inc
-requires: {}
-version: 1.02
+requires:
+  JSON::Parse: 0
+  LWP::Simple: 0
+  URI::Escape: 0
+version: 1.03
