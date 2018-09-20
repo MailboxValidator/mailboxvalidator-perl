@@ -28,8 +28,8 @@ An API key is required for this module to function.
 
 Go to https://www.mailboxvalidator.com/plans#api to sign up for a FREE API plan and you'll be given an API key.
 
-Usage
-=====
+Usage for email validation
+==========================
 
 ```perl
 use MailboxValidator::SingleValidation;
@@ -192,6 +192,136 @@ The error code if there is any error. See error table below.
 
 The error message if there is any error. See error table below.
 
+
+Usage for checking if email is from a disposable email provider
+===============================================================
+
+```perl
+use MailboxValidator::SingleValidation;
+
+my $mbv = MailboxValidator::SingleValidation->Init('PASTE_YOUR_API_KEY_HERE');
+
+my $results = $mbv->DisposableEmail('example@example.com');
+
+if (!defined($results))
+{
+	print "Error connecting to API.\n";
+}
+elsif ($results->{error_code} eq '')
+{
+	print 'email_address = ' . $results->{email_address} . "\n";
+	print 'is_disposable = ' . $results->{is_disposable} . "\n";
+	print 'credits_available = ' . $results->{credits_available} . "\n";
+}
+else
+{
+	print 'error_code = ' . $results->{error_code} . "\n";
+	print 'error_message = ' . $results->{error_message} . "\n";
+}
+```
+
+Functions
+=========
+
+### Init(api_key)
+
+Creates a new instance of the MailboxValidator object with the API key.
+
+### DisposableEmail(email_address)
+
+Checks if the supplied email address is from a disposable email provider.
+
+Result Fields
+=============
+
+### email_address
+
+The input email address.
+
+### is_disposable
+
+Whether the email address is a temporary one from a disposable email provider.
+
+Return values: True, False
+
+### credits_available
+
+The number of credits left to perform validations.
+
+### error_code
+
+The error code if there is any error. See error table below.
+
+### error_message
+
+The error message if there is any error. See error table below.
+
+
+Usage for checking if email is from a free email provider
+=========================================================
+
+```perl
+use MailboxValidator::SingleValidation;
+
+my $mbv = MailboxValidator::SingleValidation->Init('PASTE_YOUR_API_KEY_HERE');
+
+my $results = $mbv->FreeEmail('example@example.com');
+
+if (!defined($results))
+{
+	print "Error connecting to API.\n";
+}
+elsif ($results->{error_code} eq '')
+{
+	print 'email_address = ' . $results->{email_address} . "\n";
+	print 'is_free = ' . $results->{is_free} . "\n";
+	print 'credits_available = ' . $results->{credits_available} . "\n";
+}
+else
+{
+	print 'error_code = ' . $results->{error_code} . "\n";
+	print 'error_message = ' . $results->{error_message} . "\n";
+}
+```
+
+Functions
+=========
+
+### Init(api_key)
+
+Creates a new instance of the MailboxValidator object with the API key.
+
+### FreeEmail(email_address)
+
+Checks if the supplied email address is from a free email provider.
+
+Result Fields
+=============
+
+### email_address
+
+The input email address.
+
+### is_free
+
+Whether the email address is from a free email provider like Gmail or Hotmail.
+
+Return values: True, False
+
+### credits_available
+
+The number of credits left to perform validations.
+
+### error_code
+
+The error code if there is any error. See error table below.
+
+### error_message
+
+The error message if there is any error. See error table below.
+
+
+
 Errors
 ======
 
@@ -207,4 +337,4 @@ Errors
 Copyright
 =========
 
-Copyright (C) 2018 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2017 by MailboxValidator.com, support@mailboxvalidator.com
