@@ -337,4 +337,4 @@ Errors
 Copyright
 =========
 
-Copyright (C) 2017 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2018 by MailboxValidator.com, support@mailboxvalidator.com

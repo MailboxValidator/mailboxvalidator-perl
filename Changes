@@ -14,3 +14,6 @@ Revision history for Perl extension MailboxValidator::SingleValidation.
 
 1.10  20th September 2018
       Added new DisposableEmail and FreeEmail
+
+1.11  20th September 2018
+      Fixed make issue
