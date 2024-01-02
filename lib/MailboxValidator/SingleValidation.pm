@@ -1,4 +1,4 @@
-# Copyright (c) 2023 MailboxValidator.com
+# Copyright (c) 2024 MailboxValidator.com
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -239,7 +239,7 @@ L<MailboxValidator Website|https://www.mailboxvalidator.com>
 
 =head1 AUTHOR
 
-Copyright (c) 2023 MailboxValidator.com
+Copyright (c) 2024 MailboxValidator.com
 
 All rights reserved. This package is free software; It is licensed under MIT.
 
